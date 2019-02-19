@@ -5,31 +5,31 @@ require('src/functions.php');
 $name = 'Кирилл';
 $age = '29';
 
-echo '"Меня зовут: ' . $name . '"' . '<br>';
-echo '"Мне ' . $age . ' лет"' . '<br>';
-echo '" ' . '! ' . '| ' . '\\ ' . '\/ ' . '\' ' . '" ' . '\\' . '<br>';
+echo 'Меня зовут: $name<br>';
+echo 'Мне $age лет<br>';
+echo '" ! | \\ \/ \' " \\<br>';
 echo '<hr>';
 
 //task 2
-const PIC = 80;
-const PIC_FELT_TIP = 23;
-const PIC_PENCIL = 40;
-$answer = numberOfDrawings(PIC, PIC_FELT_TIP, PIC_PENCIL);
+const PICTURES = 80;
+const MARKERS = 23;
+const PENCILS = 40;
+$answer = numberOfDrawings(PICTURES, MARKERS, PENCILS);
 
-echo 'Всего рисунков: ' . PIC . '<br>';
-echo 'Рисунков выполненных фломастерами:' . PIC_FELT_TIP . '<br>';
-echo 'Рисунков выполненных карандашами: ' . PIC_PENCIL . '<br>';
+echo 'Всего рисунков: ' . PICTURES . '<br>';
+echo 'Рисунков выполненных фломастерами:' . MARKERS . '<br>';
+echo 'Рисунков выполненных карандашами: ' . PENCILS . '<br>';
 echo 'Вопрос: Сколько рисунков выполненных красками?' . '<br>';
 echo 'Ответ: ' . $answer . ' рисунков выполненных красками.' . '<br>';
 echo '<hr>';
 
 //task 3
-work(20);
+work(rand(0, 20));
 
 echo '<hr>';
 
 //task 4
-daysOfTheWeek(0);
+daysOfTheWeek(rand(0, 8));
 
 echo '<hr>';
 
@@ -53,17 +53,9 @@ $opel = [
     "year" => "2010"
 ];
 $cars = arrayCars($bmw, $toyota, $opel);
-echo 'CAR bmw<br>';
-echo $cars[0][model] . ' ' . $cars[0][speed] . ' ' . $cars[0][doors] . ' ' . $cars[0][year] . '<br>';
-echo '<br>';
-echo 'CAR toyota<br>';
-echo $cars[1][model] . ' ' . $cars[1][speed] . ' ' . $cars[1][doors] . ' ' . $cars[1][year] . '<br>';
-echo '<br>';
-echo 'CAR opel<br>';
-echo $cars[2][model] . ' ' . $cars[2][speed] . ' ' . $cars[2][doors] . ' ' . $cars[2][year] . '<br>';
 echo '<hr>';
 
 //task 6
-echo '<table width="500px"><tr>';
-echo multiplicationTable(1, 10);
-echo '</tr></<table>';
+echo '<table width="500px">';
+echo multiplicationTable(10, 10);
+echo '</<table>';

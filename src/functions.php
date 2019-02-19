@@ -1,9 +1,9 @@
 <?php
 //function task 2
-function numberOfDrawings($a, $b, $c)
+function numberOfDrawings($pictures, $markers, $pencils)
 {
-    $d = $a - $b - $c;
-    return $d;
+    $paints = $pictures - $markers - $pencils;
+    return $paints;
 }
 
 //function task 3
@@ -15,7 +15,7 @@ function work($age)
         echo 'Вам пора на пенсию';
     } elseif ($age < 18 && $age > 0) {
         echo 'Вам ещё рано работать';
-    } elseif ($age < 1) {
+    } else {
         echo 'Неизвестный возраст';
     }
 }
@@ -24,10 +24,15 @@ function work($age)
 function daysOfTheWeek($day)
 {
     switch ($day) {
-        case ($day >= 1 && $day <= 5):
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
             echo 'Это рабочий день';
             break;
-        case ($day == 6 || $day == 7):
+        case 6:
+        case 7:
             echo 'Это выходной день';
             break;
         default:
@@ -37,27 +42,35 @@ function daysOfTheWeek($day)
 }
 
 //function task 5
-function arrayCars()
+function arrayCars($array1, $array2, $array3)
 {
-    $args = func_get_args();
-    return $args;
+    $cars = [];
+    $cars['bmw'] = $array1;
+    $cars['toyota'] = $array2;
+    $cars['opel'] = $array3;
+
+    foreach ($cars as $key => $value) {
+        echo "CAR $key <br> {$value['model']} {$value['speed']} {$value['doors']} {$value['year']} <br>";
+    }
 }
 
 //function task 6
-function multiplicationTable($a, $b)
+function multiplicationTable($rows, $cols)
 {
-    for ($i = $a; $i <= $b; $i++) {
-        echo '<td>';
-            for ($j = $a; $j <= $b; $j++) {
-                $c = $j * $i;
-                if (($i % 2 == 0) && ($j % 2 == 0)) {
-                    echo '(' . $c . ')' . '<br>';
-                } elseif (($i % 2 != 0) && ($j % 2 != 0)) {
-                    echo '[' . $c . ']' . '<br>';
+    for ($tr = 1; $tr <= $rows; $tr++) {
+        echo "<tr>";
+            for ($td = 1; $td <= $cols; $td++) {
+                echo "<td>";
+                $result = $td * $tr;
+                if (($tr % 2 == 0) && ($td % 2 == 0)) {
+                    echo "( $result )";
+                } elseif (($tr % 2 != 0) && ($td % 2 != 0)) {
+                    echo "[ $result ]";
                 } else {
-                    echo $c . '<br>';
+                    echo $result;
                 }
+                echo "</td>";
             }
-        echo '</td>';
+        echo "</tr>";
     }
 }
